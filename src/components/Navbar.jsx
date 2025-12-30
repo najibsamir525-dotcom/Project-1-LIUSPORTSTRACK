@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Navbar() {
- const [isOpen, setIsOpen] = useState(false);
+function Navbar({ user, setUser }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleLogout = () => {
+    setUser(null); 
+    
+  };
 
   return (
     <nav className="bg-blue-600 p-4 text-white">
@@ -19,17 +24,51 @@ function Navbar() {
           <Link to="/about" className="hover:underline">About</Link>
           <Link to="/board" className="hover:underline">Board</Link>
           <Link to="/contact" className="hover:underline">Contact</Link>
+
+          {!user && (
+            <>
+              <Link to="/login" className="hover:underline">Login</Link>
+            
+            </>
+          )}
+
+          {user && (
+            <button
+              onClick={handleLogout}
+              className="hover:underline bg-red-500 px-2 py-1 rounded text-white"
+            >
+              Logout
+            </button>
+          )}
         </div>
       </div>
+
       {isOpen && (
         <div className="flex flex-col mt-3 space-y-2 md:hidden">
           <Link to="/" className="hover:underline">Home</Link>
           <Link to="/about" className="hover:underline">About</Link>
           <Link to="/board" className="hover:underline">Board</Link>
           <Link to="/contact" className="hover:underline">Contact</Link>
+
+          {!user && (
+            <>
+              <Link to="/login" className="hover:underline">Login</Link>
+              <Link to="/signup" className="hover:underline">Signup</Link>
+            </>
+          )}
+
+          {user && (
+            <button
+              onClick={handleLogout}
+              className="hover:underline bg-red-500 px-2 py-1 rounded text-white"
+            >
+              Logout
+            </button>
+          )}
         </div>
       )}
     </nav>
   );
 }
-export default Navbar
+
+export default Navbar;
