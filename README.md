@@ -102,7 +102,7 @@ npm start
 
 ### GET /home-plan – Fetch weekly wellness plan
 
-#### Activities
+### Activities
 
 ### GET /activities – List all activities
 
