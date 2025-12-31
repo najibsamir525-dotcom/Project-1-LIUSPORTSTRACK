@@ -90,49 +90,49 @@ npm install
 
 npm start
 
-### API Endpoints
+## API Endpoints
 
-# Authentication
+### Authentication
 
-# POST /signup – Register a new user
+### POST /signup – Register a new user
 
-# POST /login – Log in a user
+### POST /login – Log in a user
 
-# Home Plan
+### Home Plan
 
-# GET /home-plan – Fetch weekly wellness plan
+### GET /home-plan – Fetch weekly wellness plan
 
-# Activities
+#### Activities
 
-# GET /activities – List all activities
+### GET /activities – List all activities
 
-# POST /activities – Add a new activity
+### POST /activities – Add a new activity
 
-# PUT /activities/:id – Update an activity
+### PUT /activities/:id – Update an activity
 
-# DELETE /activities/:id – Delete an activity
+### DELETE /activities/:id – Delete an activity
 
-# Contact
+## Contact
 
-# POST /contact – Send a message
+### POST /contact – Send a message
 
-### Screenshots
+## Screenshots
 
-#### Login Page
+### Login Page
 ![Login Page Screenshot](image2.png)
 ![Login Page - Alternate Screenshot](image8.png)
 
-#### Home Page
+### Home Page
 ![Home Page Screenshot - Overview](image5.png)
 ![Home Page Screenshot - Weekly Plan](image6.png)
 ![Home Page Screenshot - Cards Layout](image7.png)
 
-#### About Page
+### About Page
 ![About Page Screenshot](image4.png)
 
-#### Activity Board
+### Activity Board
 ![Activity Board Screenshot](image3.png)
 
-#### Contact Page
+### Contact Page
 ![Contact Page Screenshot](image1.png)
 
