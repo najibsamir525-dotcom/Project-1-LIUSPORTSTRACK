@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import bgImage from "../home.png";
+const API = process.env.REACT_APP_API_URL || "http://localhost:5000";
 function Home() {
   const [plan, setPlan] = useState([]);
 
   useEffect(() => {
     const fetchPlan = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/home-plan");
+        const res = await axios.get(`${API}/home-plan`);
         setPlan(res.data);
       } catch (err) {
         console.error("Error fetching home plan:", err);

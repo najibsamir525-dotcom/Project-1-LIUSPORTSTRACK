@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import bgImage from "../contact.png";
-
+const API = process.env.REACT_APP_API_URL || "http://localhost:5000";
 function Contact() {
   const forms = { name: "", email: "", message: "" };
   const [form, setForm] = useState(forms);
@@ -12,7 +12,7 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/contact", form);
+      const res = await axios.post(`${API}/contact`, form);
       alert(res.data.message);
       setForm(forms);
     } catch (err) {

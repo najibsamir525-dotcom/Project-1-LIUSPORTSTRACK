@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import bgImage from "../home.png";
-
+const API = process.env.REACT_APP_API_URL || "http://localhost:5000";
 function Login({ setUser }) {
    const [isLogin, setIsLogin] = useState(true);
   const [form, setForm] = useState({ username: "", email: "", password: "" });
@@ -11,7 +11,7 @@ function Login({ setUser }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = isLogin ? "http://localhost:5000/login" : "http://localhost:5000/signup";
+    const url = isLogin ? `${API}/login` : `${API}/signup`;
 
     try {
       const res = await axios.post(url, form);

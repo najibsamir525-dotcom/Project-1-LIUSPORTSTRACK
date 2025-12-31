@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import bgImage from "../board.png";
-
+const API = process.env.REACT_APP_API_URL || "http://localhost:5000";
 function Board() {
   const [activities, setActivities] = useState([]);
   const [input, setInput] = useState({ title: "", details: "" });
@@ -9,7 +9,7 @@ function Board() {
 
   const fetchActivities = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/activities");
+      const res = await axios.get(`${API}/activities`);
       setActivities(res.data);
     } catch (err) {
       console.error("Error fetching activities:", err);
@@ -25,7 +25,7 @@ function Board() {
     if (editId) {
       try {
         const res = await axios.put(
-          `http://localhost:5000/activities/${editId}`,
+          `${API}/activities/${editId}`,
           input
         );
         alert(res.data.message);
@@ -37,7 +37,7 @@ function Board() {
       }
     } else {
       try {
-        const res = await axios.post("http://localhost:5000/activities", input);
+        const res = await axios.post(`${API}/activities`, input);
         alert(res.data.message);
         setInput({ title: "", details: "" });
         fetchActivities();
@@ -49,7 +49,7 @@ function Board() {
 
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:5000/activities/${id}`);
+      const res = await axios.delete(`${API}/activities/${id}`);
       alert(res.data.message);
       fetchActivities();
     } catch (err) {
