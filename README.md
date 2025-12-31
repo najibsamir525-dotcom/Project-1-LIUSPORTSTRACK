@@ -1,79 +1,138 @@
-### LIUSPORTSTRACK
+# LIUSPORTSTRACK
 
-LIUSPORTSTRACK is a simple and intuitive fitness and wellness tracking web application built with React and Tailwind CSS.
+**LIUSPORTSTRACK** is a full-stack fitness and wellness tracking web application. It allows users to track exercises, meals, and daily activities, as well as send messages through a contact form. Built with **React**, **Tailwind CSS**, **Node.js**, **Express**, and **MySQL**, it offers a clean, responsive, and interactive user experience.
 
-It allows users to:
+**Live Demo:** [https://project-1-liusportstrack.vercel.app/](https://project-1-liusportstrack.vercel.app/)
 
--	View a structured weekly wellness plan (exercises + meals)
--	Log custom daily activities using an interactive dashboard
--	Send messages via a built-in contact form
--	Navigate through a clean, responsive UI with dedicated pages
+---
 
-### Domain name: 
-link: sportstrack.vercel.app
-### Features
+## Features
+
+### Authentication
+- Sign Up / Login functionality
+- Stores users in a MySQL database
+- Validates required fields and prevents duplicate emails
 
 ### Home Page
+- Displays a weekly wellness plan (exercises + meals)
+- Card-style layout for each day with responsive design
 
-- 	Displays a full weekly schedule of exercises and meal plans.
-- 	Clean, card-style layout for each day.
 ### About Page
+- Explains the purpose of LIUSPORTSTRACK
+- Highlights key features and usage
 
-- 	Provides information about the purpose of LIUSPORTSTRACK.
-- 	Highlights key features of the application.
 ### Activity Board
+- Add custom activities with title and details
+- Edit and delete activities dynamically
+- Real-time updates using React state and Axios requests
 
-- 	Users can add custom activities with a title and details.
-- 	Activities appear instantly in a dynamic list.
-- 	Simple state-managed UI using React hooks.
 ### Contact Form
+- Submit name, email, and message
+- Confirmation alert on successful submission
+- Messages stored in the database
 
-- 	A form that collects name, email, and message.
-- 	Provides a confirmation alert after submitting.
 ### Navigation
+- Responsive navbar with links to Home, About, Board, and Contact
+- Footer displayed across all pages
 
-- 	A responsive navbar with links to Home, About, Board, and Contact.
-- 	A footer displayed across all pages.
-### Setup Instructions
-### Install dependencies
+---
 
-- npm install
+## Technologies Used
 
-### Start the development server
+- Frontend: React, React Router, Tailwind CSS, Axios
+- Backend: Node.js, Express
+- Database: MySQL
+- Other: dotenv, cors, nodemon
 
-- npm start
+---
 
-### Open in browser
+## Project Structure
 
-### Navigate to:
-- https://github.com/najibsamir525-dotcom/Project-1-LIUSPORTSTRACK 
+- backend/
+- index.js
+- package.json
+- .env
 
-### Project Structure
-- src
--  App.js
--  App.css
--  index.js
+- frontend/
+- src/
+- App.js
+- App.css
+- index.js
+- components/
+- Navbar.jsx
+- Footer.jsx
+- Home.jsx
+- About.jsx
+- Contact.jsx
+- Board.jsx
+- Login.jsx
+- package.json
 
-- components
--    Navbar.jsx
--    Footer.jsx
--    Home.jsx
--    About.jsx
--    Contact.jsx
--    Board.jsx
 
-### Technologies Used
+## Setup Instructions
 
-- 	React
-- 	React Router
-- 	Tailwind 
-- 	JavaScript 
-- 	Create React App 
+### Backend
+cd backend
 
-### Screenshots:
-![image](Screenshot%202025-11-22%20191216.png)
-![image](Screenshot%202025-11-22%20191233.png)
-![image](Screenshot%202025-11-22%20191248.png)
-![image](Screenshot%202025-11-22%20191305.png)
-![image](Screenshot%202025-11-22%20191321.png)
-![image](Screenshot%202025-11-22%20191334.png)
+npm install
+
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT || 3306
+
+npm start
+### FrontEnd
+cd frontend
+
+npm install
+
+npm start
+
+### API Endpoints
+
+# Authentication
+
+# POST /signup – Register a new user
+
+# POST /login – Log in a user
+
+# Home Plan
+
+# GET /home-plan – Fetch weekly wellness plan
+
+# Activities
+
+# GET /activities – List all activities
+
+# POST /activities – Add a new activity
+
+# PUT /activities/:id – Update an activity
+
+# DELETE /activities/:id – Delete an activity
+
+# Contact
+
+# POST /contact – Send a message
+
+### Screenshots
+
+#### Login Page
+![Login Page Screenshot](image2.png)
+![Login Page - Alternate Screenshot](image8.png)
+
+#### Home Page
+![Home Page Screenshot - Overview](image5.png)
+![Home Page Screenshot - Weekly Plan](image6.png)
+![Home Page Screenshot - Cards Layout](image7.png)
+
+#### About Page
+![About Page Screenshot](image4.png)
+
+#### Activity Board
+![Activity Board Screenshot](image3.png)
+
+#### Contact Page
+![Contact Page Screenshot](image1.png)
+
