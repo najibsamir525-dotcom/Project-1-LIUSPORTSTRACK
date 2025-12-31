@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import bgImage from "../home.png";
+
 function Login({ setUser }) {
    const [isLogin, setIsLogin] = useState(true);
   const [form, setForm] = useState({ username: "", email: "", password: "" });
